@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class ShoppingCartManager {
-    public static void PrintMenu() {
+    public static void printMenu() {
         System.out.println("MENU");
         System.out.println("a - Add item to cart");
         System.out.println("d - Remove item from cart");
@@ -84,12 +84,16 @@ public class ShoppingCartManager {
         String customerName = scnr.nextLine();
         System.out.println("Enter today's date:");
         String currentDate = scnr.nextLine();
+        
+
 
         ShoppingCart cart = new ShoppingCart(customerName, currentDate);
 
+        cart.printCustomerName(customerName, currentDate); 
+
         char choice;
         do {
-            PrintMenu();
+            printMenu();
             System.out.print("Choose an option: ");
             choice = scnr.nextLine().charAt(0);
             // ExecuteMenu(choice, cart, scnr);

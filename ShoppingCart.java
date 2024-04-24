@@ -108,4 +108,9 @@ public class ShoppingCart {
             item.printItemDescription();
         }
     }
+    public void printCustomerName(String customerName, String currentDate) {
+        System.out.println("Customer name: " + customerName);
+        System.out.println();
+        System.out.print("Today's date: " + currentDate);
+}
 }

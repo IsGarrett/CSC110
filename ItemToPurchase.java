@@ -11,12 +11,12 @@ public class ItemToPurchase {
         this.itemQuantity = itemQuantity;
     }
 
-    public void setDescription(String itemDescription) {
-        this.itemDescription = itemDescription;
+    public void setDescription(String newDescription) {
+        this.itemDescription = newDescription;
     }
 
     public String getDescription() {
-        return itemDescription;
+        return this.itemDescription;
     }
 
     public void printItemCost() {
