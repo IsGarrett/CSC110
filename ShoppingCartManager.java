@@ -38,15 +38,25 @@ public class ShoppingCartManager {
 
             case 'c':
                 System.out.println("CHANGE ITEM QUANTITY");
+                // get an existing item from the cart
+                // changing the item quality
+
                 System.out.print("Enter the item name: ");
                 String itemName = scnr.nextLine();
+
+                // is item in cart
+                // if the item is not in the cart then refuse.
+
                 System.out.print("Enter the new quantity: ");
                 int newQuantity = scnr.nextInt();
                 scnr.nextLine(); 
-                ItemToPurchase modifiyItem = new ItemToPurchase(name, description, price, quantity);
-                modifyItem.setName(name);
-                modifyItem.setQuantity(newQuantity);
-                cart.modifyItem(modifyItem);
+
+
+                // ItemToPurchase modifyItem = new ItemToPurchase(itemName, description, price, quantity);
+
+                // modifyItem.setName(name);
+                // modifyItem.setQuantity(newQuantity);
+                // cart.modifyItem(modifyItem);
                 break;
 
             case 'i':
@@ -74,13 +84,15 @@ public class ShoppingCartManager {
         String customerName = scnr.nextLine();
         System.out.println("Enter today's date:");
         String currentDate = scnr.nextLine();
+
         ShoppingCart cart = new ShoppingCart(customerName, currentDate);
+
         char choice;
         do {
             PrintMenu();
             System.out.print("Choose an option: ");
             choice = scnr.nextLine().charAt(0);
-            ExecuteMenu(choice, cart, scnr);
+            // ExecuteMenu(choice, cart, scnr);
         } while (choice != 'q');
     }
 }

@@ -27,6 +27,7 @@ public class ItemToPurchase {
         System.out.println(name + ": " + itemDescription);
     }
 
+    // Getters
     public String getName() {
         return name;
     }
@@ -37,5 +38,18 @@ public class ItemToPurchase {
 
     public int getQuantity() {
         return itemQuantity;
+    }
+
+    // Setters
+    public void setName(String newName) {
+        this.name = newName;
+    }
+
+    public void setQuantity(int newQuantity) {
+        this.itemPrice = newQuantity;
+    }
+
+    public void setPrice(double newItemPrice) {
+        this.itemPrice = newItemPrice;
     }
 }

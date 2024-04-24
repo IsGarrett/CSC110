@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class ShoppingCart {
     private String customerName = "none";
     private String currentDate = "January 1, 2016";
-    private ArrayList<ItemToPurchase> cartItems = new ArrayList<>();
+    private ArrayList<ItemToPurchase> cartItems = new ArrayList<>(); // check this
 
     public ShoppingCart() {}
 
@@ -13,22 +13,24 @@ public class ShoppingCart {
     }
 
     public String getCustomerName() {
-        return customerName;
+        return this.customerName;
     }
 
     public String getDate() {
-        return currentDate;
+        return this.currentDate;
     }
 
     public void addItem(ItemToPurchase item) {
-        cartItems.add(item);
+        this.cartItems.add(item);
     }
 
     public void removeItem(String name) {
         boolean found = false;
-        for (ItemToPurchase item : cartItems) {
+        // for each loop
+        // for each item (ItemToPurchase) in this.cartItems (array/ iterable) 
+        for (ItemToPurchase item : this.cartItems) {
             if (item.getName().equalsIgnoreCase(name)) {
-                cartItems.remove(item);
+                this.cartItems.remove(item);
                 found = true;
                 break;
             }
@@ -40,15 +42,15 @@ public class ShoppingCart {
 
     public void modifyItem(ItemToPurchase item) {
         boolean found = false;
-        for (ItemToPurchase currentItem : cartItems) {
+        for (ItemToPurchase currentItem : this.cartItems) {
             if (currentItem.getName().equalsIgnoreCase(item.getName())) {
                 if (!item.getDescription().equals("none")) {
                     currentItem.setDescription(item.getDescription());
                 }
-                if (item.getPrice() != 0) {
+                if (item.getPrice() >= 0) { 
                     currentItem.setPrice(item.getPrice());
                 }
-                if (item.getQuantity() != 0) {
+                if (item.getQuantity() >= 0) {
                     currentItem.setQuantity(item.getQuantity());
                 }
                 found = true;
@@ -60,24 +62,27 @@ public class ShoppingCart {
         }
     }
 
+    // public void modifyItem(String Name, double price, int quantity) { }
+
     public int getNumItemsInCart() {
-        int totalQuantity = 0;
-        for (ItemToPurchase item : cartItems) {
-            totalQuantity += item.getQuantity();
-        }
-        return totalQuantity;
+        // int totalQuantity = 0;
+        // for (ItemToPurchase item : cartItems) {
+        //     totalQuantity += item.getQuantity();
+        // }
+        // return totalQuantity;
+        return this.cartItems.size();
     }
 
     public double getCostOfCart() {
         double totalCost = 0;
-        for (ItemToPurchase item : cartItems) {
+        for (ItemToPurchase item : this.cartItems) {
             totalCost += item.getPrice() * item.getQuantity();
         }
         return totalCost;
     }
 
     public void printTotal() {
-        if (cartItems.isEmpty()) {
+        if (this.cartItems.isEmpty()) {
             System.out.println("SHOPPING CART IS EMPTY");
             return;
         }
@@ -92,14 +97,14 @@ public class ShoppingCart {
     }
 
     public void printDescriptions() {
-        if (cartItems.isEmpty()) {
+        if (this.cartItems.isEmpty()) {
             System.out.println("SHOPPING CART IS EMPTY");
             return;
         }
         System.out.println(customerName + "'s Shopping Cart - " + currentDate);
         System.out.println();
         System.out.println("Item Descriptions");
-        for (ItemToPurchase item : cartItems) {
+        for (ItemToPurchase item : this.cartItems) {
             item.printItemDescription();
         }
     }

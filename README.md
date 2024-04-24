@@ -1,9 +1,10 @@
-13.6 LAB*: Program: Online shopping cart (Part 2)
+# 13.6 LAB*: Program: Online shopping cart (Part 2)
+
 Note: Creating multiple Scanner objects for the same input stream yields unexpected behavior. Thus, as good practice is to use a single Scanner object for reading input from System.in. That Scanner object can be passed as an argument to any methods that read input.
 
 This program extends the earlier "Online shopping cart (Part 1)" program. (Consider first saving your earlier program).
 
-Step 1: Extend the ItemToPurchase class per the following specifications:
+## Step 1: Extend the ItemToPurchase class per the following specifications:
 Private fields
 string itemDescription - Initialized in default constructor to "none"
 Parameterized constructor to assign item name, item description, item price, and item quantity. (1 pt)
